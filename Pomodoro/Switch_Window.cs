@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pomodoro
 {
-    public partial class Form1 : Form
+    public partial class Switch_Window : Form
     {
-        public Form1()
+        public Switch_Window()
         {
             InitializeComponent();
         }
