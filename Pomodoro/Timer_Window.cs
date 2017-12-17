@@ -12,9 +12,11 @@ namespace Pomodoro
 {
     public partial class Timer_Window : Form
     {
-        public Timer_Window()
+        public Timer_Window(int workingMinutes, int breakMinutes, int numOfSessions)
         {
             InitializeComponent();
+
+            sessionsRemainingTextBox.Text = Convert.ToString(numOfSessions);
         }
     }
 }

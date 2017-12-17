@@ -49,9 +49,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(107, 9);
+            this.label1.Location = new System.Drawing.Point(143, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 24);
+            this.label1.Size = new System.Drawing.Size(109, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Study: ";
             // 
@@ -59,9 +60,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(107, 189);
+            this.label2.Location = new System.Drawing.Point(143, 233);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 22);
+            this.label2.Size = new System.Drawing.Size(85, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Break:";
             // 
@@ -69,28 +71,33 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 345);
+            this.label3.Location = new System.Drawing.Point(16, 425);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(201, 16);
+            this.label3.Size = new System.Drawing.Size(249, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Number of session remaining: ";
             // 
             // sessionsRemainingTextBox
             // 
-            this.sessionsRemainingTextBox.Location = new System.Drawing.Point(245, 345);
+            this.sessionsRemainingTextBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.sessionsRemainingTextBox.Location = new System.Drawing.Point(327, 425);
+            this.sessionsRemainingTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sessionsRemainingTextBox.Name = "sessionsRemainingTextBox";
-            this.sessionsRemainingTextBox.Size = new System.Drawing.Size(57, 20);
+            this.sessionsRemainingTextBox.ReadOnly = true;
+            this.sessionsRemainingTextBox.Size = new System.Drawing.Size(75, 22);
             this.sessionsRemainingTextBox.TabIndex = 3;
             // 
             // Timer_Window
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 370);
+            this.ClientSize = new System.Drawing.Size(419, 455);
             this.Controls.Add(this.sessionsRemainingTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Timer_Window";
             this.Text = "Study and Work with Pomodoro";
             this.ResumeLayout(false);

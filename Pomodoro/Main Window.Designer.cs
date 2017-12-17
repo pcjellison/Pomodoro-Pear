@@ -44,9 +44,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 37);
+            this.label1.Location = new System.Drawing.Point(8, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(294, 24);
+            this.label1.Size = new System.Drawing.Size(394, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Number of minutes working:";
             // 
@@ -54,9 +55,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 93);
+            this.label2.Location = new System.Drawing.Point(7, 114);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 25);
+            this.label2.Size = new System.Drawing.Size(289, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Number of break minutes:";
             // 
@@ -64,51 +66,62 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 164);
+            this.label3.Location = new System.Drawing.Point(7, 202);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 25);
+            this.label3.Size = new System.Drawing.Size(221, 31);
             this.label3.TabIndex = 2;
             this.label3.Text = "Number of session:";
             // 
             // studyNumericUpDown
             // 
             this.studyNumericUpDown.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studyNumericUpDown.Location = new System.Drawing.Point(341, 39);
+            this.studyNumericUpDown.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.studyNumericUpDown.Location = new System.Drawing.Point(455, 48);
+            this.studyNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.studyNumericUpDown.Name = "studyNumericUpDown";
-            this.studyNumericUpDown.Size = new System.Drawing.Size(70, 22);
+            this.studyNumericUpDown.Size = new System.Drawing.Size(93, 26);
             this.studyNumericUpDown.TabIndex = 3;
             // 
             // breakNumericUpDown
             // 
             this.breakNumericUpDown.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.breakNumericUpDown.Location = new System.Drawing.Point(341, 100);
+            this.breakNumericUpDown.Location = new System.Drawing.Point(455, 123);
+            this.breakNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.breakNumericUpDown.Name = "breakNumericUpDown";
-            this.breakNumericUpDown.Size = new System.Drawing.Size(69, 22);
+            this.breakNumericUpDown.Size = new System.Drawing.Size(92, 26);
             this.breakNumericUpDown.TabIndex = 4;
             // 
             // sessionNumericUpDown
             // 
             this.sessionNumericUpDown.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sessionNumericUpDown.Location = new System.Drawing.Point(341, 164);
+            this.sessionNumericUpDown.Location = new System.Drawing.Point(455, 202);
+            this.sessionNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sessionNumericUpDown.Name = "sessionNumericUpDown";
-            this.sessionNumericUpDown.Size = new System.Drawing.Size(69, 22);
+            this.sessionNumericUpDown.Size = new System.Drawing.Size(92, 26);
             this.sessionNumericUpDown.TabIndex = 5;
             // 
             // startButton
             // 
             this.startButton.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.Location = new System.Drawing.Point(74, 226);
+            this.startButton.Location = new System.Drawing.Point(99, 278);
+            this.startButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(267, 75);
+            this.startButton.Size = new System.Drawing.Size(356, 92);
             this.startButton.TabIndex = 6;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // Main_Window
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 313);
+            this.ClientSize = new System.Drawing.Size(564, 385);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.sessionNumericUpDown);
             this.Controls.Add(this.breakNumericUpDown);
@@ -116,6 +129,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main_Window";
             this.Text = "Study and Work with Pomodoro";
             ((System.ComponentModel.ISupportInitialize)(this.studyNumericUpDown)).EndInit();
