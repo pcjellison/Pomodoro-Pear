@@ -12,11 +12,67 @@ namespace Pomodoro
 {
     public partial class Timer_Window : Form
     {
-        public Timer_Window(int workingMinutes, int breakMinutes, int numOfSessions)
+        int timeLeft;   //global variable used by both timers to track time remaining
+        bool studyNow;
+        int workingMin;
+        int breakMin;
+        int numSessions;
+
+        public Timer_Window(int workingMinutes, int breakMinutes, int numOfSessions, bool studyNowBool)
         {
             InitializeComponent();
 
-            sessionsRemainingTextBox.Text = Convert.ToString(numOfSessions);
+            studyNow = studyNowBool;
+            workingMin = workingMinutes;
+            breakMin = breakMinutes;
+            numSessions = numOfSessions;
+            numOfSessions--;
+            sessionsRemainingTextBox.Text = Convert.ToString(numSessions);
+            if(studyNow)
+            {
+                timeLeft = workingMin;
+                studyTimer.Start();
+            }
+            else
+            {
+                timeLeft = breakMin;
+                breakTimer.Start();
+            }
+        }
+
+        //This code is in thanks to Microsoft Documentation and Nomad101 on Stack overflow.
+        //These guides can be found at:
+        //https://msdn.microsoft.com/en-us/library/dd492144.aspx
+        //https://stackoverflow.com/questions/16620234/how-to-do-a-30-minute-count-down-timer
+
+        private void studyTimer_Tick(object sender, EventArgs e)
+        {
+            if(timeLeft > 0)
+            {
+                timeLeft = timeLeft - 1;
+                studyTimeLabel.Text = Convert.ToString(timeLeft / 60) + ":" + ((timeLeft % 60) >= 10 ? (timeLeft % 60).ToString() : "0" + timeLeft % 60);
+            }
+            else
+            {
+                studyNow = false;
+                var switchWindow = new Switch_Window(workingMin, breakMin, numSessions, studyNow);
+                switchWindow.Show();
+            }
+        }
+
+        private void breakTimer_Tick(object sender, EventArgs e)
+        {
+            if (timeLeft > 0)
+            {
+                timeLeft = timeLeft - 1;
+                breakTimeLabel.Text = Convert.ToString(timeLeft / 60) + ":" + ((timeLeft % 60) >= 10 ? (timeLeft % 60).ToString() : "0" + timeLeft % 60);
+            }
+            else
+            {
+                studyNow = true;
+                var switchWindow = new Switch_Window(workingMin, breakMin, numSessions, studyNow);
+                switchWindow.Show();
+            }
         }
     }
 }

@@ -35,15 +35,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.sessionsRemainingTextBox = new System.Windows.Forms.TextBox();
+            this.studyTimeLabel = new System.Windows.Forms.Label();
+            this.breakTimeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // studyTimer
             // 
             this.studyTimer.Interval = 750;
+            this.studyTimer.Tick += new System.EventHandler(this.studyTimer_Tick);
             // 
             // breakTimer
             // 
             this.breakTimer.Interval = 750;
+            this.breakTimer.Tick += new System.EventHandler(this.breakTimer_Tick);
             // 
             // label1
             // 
@@ -82,22 +86,45 @@
             // 
             this.sessionsRemainingTextBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.sessionsRemainingTextBox.Location = new System.Drawing.Point(327, 425);
-            this.sessionsRemainingTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sessionsRemainingTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.sessionsRemainingTextBox.Name = "sessionsRemainingTextBox";
             this.sessionsRemainingTextBox.ReadOnly = true;
             this.sessionsRemainingTextBox.Size = new System.Drawing.Size(75, 22);
             this.sessionsRemainingTextBox.TabIndex = 3;
             // 
+            // studyTimeLabel
+            // 
+            this.studyTimeLabel.AutoSize = true;
+            this.studyTimeLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.studyTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studyTimeLabel.Location = new System.Drawing.Point(95, 86);
+            this.studyTimeLabel.Name = "studyTimeLabel";
+            this.studyTimeLabel.Size = new System.Drawing.Size(0, 91);
+            this.studyTimeLabel.TabIndex = 4;
+            // 
+            // breakTimeLabel
+            // 
+            this.breakTimeLabel.AutoSize = true;
+            this.breakTimeLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.breakTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.breakTimeLabel.Location = new System.Drawing.Point(95, 287);
+            this.breakTimeLabel.Name = "breakTimeLabel";
+            this.breakTimeLabel.Size = new System.Drawing.Size(0, 91);
+            this.breakTimeLabel.TabIndex = 5;
+            // 
             // Timer_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(419, 455);
+            this.Controls.Add(this.breakTimeLabel);
+            this.Controls.Add(this.studyTimeLabel);
             this.Controls.Add(this.sessionsRemainingTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Timer_Window";
             this.Text = "Study and Work with Pomodoro";
             this.ResumeLayout(false);
@@ -113,5 +140,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox sessionsRemainingTextBox;
+        private System.Windows.Forms.Label studyTimeLabel;
+        private System.Windows.Forms.Label breakTimeLabel;
     }
 }
