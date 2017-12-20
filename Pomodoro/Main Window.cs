@@ -15,6 +15,7 @@ namespace Pomodoro
         public Main_Window()
         {
             InitializeComponent();
+            startButton.BackColor = Color.White;
 
 
         }
@@ -26,8 +27,8 @@ namespace Pomodoro
             int numOfSessions = Convert.ToInt32(sessionNumericUpDown.Value);    //number of sessions user would like to study/break for
             bool studyNow = true;
 
-            var timerWindow = new Timer_Window(workingMinutes, breakMinutes, numOfSessions, studyNow);
-            timerWindow.Show();
+            var timerWindow = new Timer_Window(workingMinutes, breakMinutes, numOfSessions, studyNow);  //creates new window displaying timers
+            timerWindow.Show(); //show timer window
 
 
         }

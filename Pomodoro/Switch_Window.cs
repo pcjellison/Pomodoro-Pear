@@ -20,12 +20,12 @@ namespace Pomodoro
 
         private void continueButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.OK;    //sets dialog result to OK if user wants to continue
         }
 
         private void quitButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            this.DialogResult = DialogResult.Cancel;    //sets dialog result to Cancel if user wants to quit
         }
     }
 }

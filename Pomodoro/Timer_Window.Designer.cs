@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Timer_Window));
             this.studyTimer = new System.Windows.Forms.Timer(this.components);
             this.breakTimer = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -52,38 +53,39 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(143, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 32);
+            this.label1.Size = new System.Drawing.Size(111, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Study: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(143, 233);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 29);
+            this.label2.Size = new System.Drawing.Size(103, 33);
             this.label2.TabIndex = 1;
             this.label2.Text = "Break:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(16, 425);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(249, 19);
+            this.label3.Size = new System.Drawing.Size(300, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Number of session remaining: ";
             // 
             // sessionsRemainingTextBox
             // 
+            this.sessionsRemainingTextBox.BackColor = System.Drawing.Color.White;
             this.sessionsRemainingTextBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.sessionsRemainingTextBox.Location = new System.Drawing.Point(327, 425);
             this.sessionsRemainingTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -91,6 +93,7 @@
             this.sessionsRemainingTextBox.ReadOnly = true;
             this.sessionsRemainingTextBox.Size = new System.Drawing.Size(75, 22);
             this.sessionsRemainingTextBox.TabIndex = 3;
+            this.sessionsRemainingTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // studyTimeLabel
             // 
@@ -116,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(419, 455);
             this.Controls.Add(this.breakTimeLabel);
             this.Controls.Add(this.studyTimeLabel);
@@ -124,7 +127,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Timer_Window";
             this.Text = "Study and Work with Pomodoro";
             this.ResumeLayout(false);
