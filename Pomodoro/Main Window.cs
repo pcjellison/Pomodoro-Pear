@@ -28,6 +28,8 @@ namespace Pomodoro
 
             var timerWindow = new Timer_Window(workingMinutes, breakMinutes, numOfSessions, studyNow);
             timerWindow.Show();
+
+
         }
     }
 }

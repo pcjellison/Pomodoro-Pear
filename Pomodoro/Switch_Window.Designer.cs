@@ -59,7 +59,7 @@
             // continueButton
             // 
             this.continueButton.Location = new System.Drawing.Point(16, 89);
-            this.continueButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.continueButton.Margin = new System.Windows.Forms.Padding(4);
             this.continueButton.Name = "continueButton";
             this.continueButton.Size = new System.Drawing.Size(176, 49);
             this.continueButton.TabIndex = 2;
@@ -70,7 +70,7 @@
             // quitButton
             // 
             this.quitButton.Location = new System.Drawing.Point(223, 89);
-            this.quitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quitButton.Margin = new System.Windows.Forms.Padding(4);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(159, 49);
             this.quitButton.TabIndex = 3;
@@ -87,7 +87,7 @@
             this.Controls.Add(this.continueButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Switch_Window";
             this.Text = "Study and Work with Pomodoro";
             this.ResumeLayout(false);

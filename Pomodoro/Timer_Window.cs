@@ -26,16 +26,16 @@ namespace Pomodoro
             workingMin = workingMinutes;
             breakMin = breakMinutes;
             numSessions = numOfSessions;
-            numOfSessions--;
+            numSessions--;
             sessionsRemainingTextBox.Text = Convert.ToString(numSessions);
             if(studyNow)
             {
-                timeLeft = workingMin;
+                timeLeft = workingMin * 60;
                 studyTimer.Start();
             }
             else
             {
-                timeLeft = breakMin;
+                timeLeft = breakMin * 60;
                 breakTimer.Start();
             }
         }
@@ -55,8 +55,17 @@ namespace Pomodoro
             else
             {
                 studyNow = false;
-                var switchWindow = new Switch_Window(workingMin, breakMin, numSessions, studyNow);
-                switchWindow.Show();
+                studyTimer.Stop();
+                var switchWindow = new Switch_Window();
+                if(switchWindow.ShowDialog() == DialogResult.OK)
+                {
+                    timeLeft = breakMin * 60;
+                    breakTimer.Start();
+                }
+                else
+                {
+                    Application.Exit();
+                }
             }
         }
 
@@ -67,11 +76,25 @@ namespace Pomodoro
                 timeLeft = timeLeft - 1;
                 breakTimeLabel.Text = Convert.ToString(timeLeft / 60) + ":" + ((timeLeft % 60) >= 10 ? (timeLeft % 60).ToString() : "0" + timeLeft % 60);
             }
+            else if (numSessions == 0)
+            {
+                this.Close();
+            }
             else
             {
                 studyNow = true;
-                var switchWindow = new Switch_Window(workingMin, breakMin, numSessions, studyNow);
-                switchWindow.Show();
+                numSessions--;
+                breakTimer.Stop();
+                var switchWindow = new Switch_Window();
+                if(switchWindow.ShowDialog() == DialogResult.OK)
+                {
+                    timeLeft = workingMin = 60;
+                    studyTimer.Start();
+                }
+                else
+                {
+                    Application.Exit();
+                }
             }
         }
     }
